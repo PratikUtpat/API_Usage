@@ -9,5 +9,11 @@ namespace API_Usage.DataAccess
 
     public DbSet<Company> Companies { get; set; }
     public DbSet<Equity> Equities { get; set; }
-  }
+    public DbSet<News> newsList { get; set; }
+    public DbSet<FinancialList> FinancialList { get; set; }
+    public DbSet<Sector> sector { get; set; }
+    public DbSet<Top_Gainers> Top_Gainers { get; set; }
+
+
+    }
 }

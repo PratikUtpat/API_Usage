@@ -1,0 +1,253 @@
+﻿@model IEnumerable<API_Usage.Models.Top_Gainers>
+
+@{
+    ViewData["Title"] = "Gainers";
+}
+
+<h2>Top Gainers</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.symbol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.companyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.primaryExchange)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sector)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.calculationPrice)
+            </th>
+            
+            
+            <th>
+                @Html.DisplayNameFor(model => model.close)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.high)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.low)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.latestPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.latestSource)
+            </th>
+            
+            
+            <th>
+                @Html.DisplayNameFor(model => model.latestVolume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.iexRealtimePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.iexRealtimeSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.iexLastUpdated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.delayedPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.delayedPriceTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.extendedPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.extendedChange)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.extendedChangePercent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.extendedPriceTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.previousClose)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.change)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.changePercent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.iexMarketPercent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.iexVolume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.avgTotalVolume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.iexBidPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.iexBidSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.iexAskPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.iexAskSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.marketCap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.peRatio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.week52High)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.week52Low)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ytdChange)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.symbol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.companyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.primaryExchange)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sector)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.calculationPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.open)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.close)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.high)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.low)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.latestPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.latestSource)
+                </td>
+                
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.latestVolume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.iexRealtimePrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.iexRealtimeSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.iexLastUpdated)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.delayedPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.delayedPriceTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.extendedPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.extendedChange)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.extendedChangePercent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.extendedPriceTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.previousClose)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.change)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.changePercent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.iexMarketPercent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.iexVolume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.avgTotalVolume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.iexBidPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.iexBidSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.iexAskPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.iexAskSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.marketCap)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.peRatio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.week52High)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.week52Low)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ytdChange)
+                </td>
+                
+            </tr>
+        }
+            <tr>
+        <td>
+            <a id="dbopt" asp-controller="Home" asp-action="PopulateGainer"><img src="~/img/button_save-data.png" /></a>
+        </td>
+    </tr>
+
+    
+
+        </tbody>
+    </table>

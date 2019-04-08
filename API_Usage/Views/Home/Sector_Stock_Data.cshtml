@@ -1,0 +1,74 @@
+﻿@model API_Usage.Models.sectorData
+
+@{
+    foreach(var item in Model.Gain)
+    {
+        ViewData["Sector"] = item.sector;
+        break;
+    }
+    ViewData["Title"] = "Sector_Stock_Data";
+}
+
+<h2>Sector_Stock_Data</h2>
+<form asp-controller="Home" asp-action="Sector" method="get">
+    <select name="Sector">
+        @foreach (var company in Model.SectorL)
+        {
+            <option value=@company.name class="selector">@company.name</option>
+            ViewData["sel"] = ViewData["Sector"];
+        }
+    </select>
+    <input type="submit" value="Submit" />
+</form>
+<table class="table">
+    <thead>
+        <tr id="title" data-sec="@ViewData["Sector"]">
+          
+        </tr>
+        <tr>
+            <th>
+                Company
+            </th>
+            <th>
+                Open
+            </th>
+            <th>
+                Close
+            </th>
+            <th>
+                High
+            </th>
+            <th>
+                Low
+            </th>
+            <th>
+                Latest Price
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Gain) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.companyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.open)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.close)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.high)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.low)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.latestPrice)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,78 @@
+﻿@model API_Usage.Models.financial_API
+@{
+    ViewData["Title"] = "companyFinancials";
+}
+<h2>Financial Data</h2>
+<form asp-controller="Home" asp-action="financials" method="get">
+    <select name="symbol">
+        @foreach (var company in Model.company)
+        {
+            <option value=@company.symbol selected>@company.name</option>
+        }
+    </select>
+    <input type="submit" value="Submit" />
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Reported Date</th>
+            <th>Gross Profit</th>
+            <th>Cost Of Revenue</th>
+            <th>Operating Revenue</th>
+            <th>Total Revenue</th>
+            <th>Operating Income</th>
+            <th>Net Income</th>
+            <th>Current Cash</th>
+            <th>Current Assets</th>
+            <th>Total Assets</th>
+            <th>Total Liabilities</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var itemI in Model.finance.financials)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => itemI.reportDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => itemI.grossProfit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => itemI.costOfRevenue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => itemI.operatingRevenue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => itemI.totalRevenue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => itemI.operatingIncome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => itemI.netIncome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => itemI.currentCash)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => itemI.currentAssets)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => itemI.totalAssets)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => itemI.totalLiabilities)
+                </td>
+                
+            </tr>
+        }
+            <tr>
+                <td>
+                    <a id="dbopt" asp-controller="Home" asp-action="PopulateFinancial"><img src="~/img/button_save-data.png" /></a>
+                </td>
+            </tr>
+        
+    </tbody>
+</table>
