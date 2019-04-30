@@ -100,6 +100,7 @@ namespace API_Usage.Models
         public int ID { get; set; }
         public string symbol { get; set; }
         public List<Financial> financials { get; set; }
+        
     }
 
     public class Financial

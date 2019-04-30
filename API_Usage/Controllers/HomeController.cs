@@ -47,6 +47,11 @@ namespace API_Usage.Controllers
             return View();
         }
 
+        public IActionResult About_US()
+        {
+            return View();
+        }
+
         /****
          * The Symbols action calls the GetSymbols method that returns a list of Companies.
          * This list of Companies is passed to the Symbols View.
@@ -476,6 +481,11 @@ namespace API_Usage.Controllers
                 //First remove equities and then the companies
                 dbContext.Equities.RemoveRange(dbContext.Equities);
                 dbContext.Companies.RemoveRange(dbContext.Companies);
+                dbContext.newsList.RemoveRange(dbContext.newsList);
+                dbContext.sector.RemoveRange(dbContext.sector);
+                dbContext.Top_Gainers.RemoveRange(dbContext.Top_Gainers);
+                dbContext.Financial.RemoveRange(dbContext.Financial);
+                dbContext.FinancialList.RemoveRange(dbContext.FinancialList);
             }
             else if ("Companies".Equals(tableToDel))
             {
@@ -494,6 +504,7 @@ namespace API_Usage.Controllers
             }
             else if ("Financial".Equals(tableToDel))
             {
+                dbContext.Financial.RemoveRange(dbContext.Financial);
                 dbContext.FinancialList.RemoveRange(dbContext.FinancialList);
             }
              else if ("Sector".Equals(tableToDel))
